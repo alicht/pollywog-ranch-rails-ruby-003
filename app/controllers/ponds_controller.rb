@@ -10,7 +10,7 @@ class PondsController < ApplicationController
   end 
   
   def show
-    @pond = Ponds.find(params[:id]) 
+    @pond = Pond.find(params[:id]) 
   end
 
   def new
