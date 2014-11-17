@@ -36,12 +36,12 @@ class FrogsController < ApplicationController
   end
 #edit- gives us the interface to update
   def update
-    @frog = Frog.find(frog_params[:id])
-    @frog.assign_attributes(name: params[:name])
+    @frog = Frog.find(params[:id])
+    @frog.assign_attributes(frog_params)
     if @frog.save
       redirect_to frog_path(@frog)
     else
-      redirect_to edit_frog_path(@frog), notice: "I'm gonna git you sucka!!!"
+      redirect_to edit_frog_path(@frog), notice: "Please update"
        
      end 
   end

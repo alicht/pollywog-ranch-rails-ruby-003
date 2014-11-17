@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  root 'frogs#index'
+
   resources :frogs do
     resources :tadpoles, only: :new
   end
